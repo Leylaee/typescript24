@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divs{
+        margin:10px;
+        padding:12px;
+        border:2px solid #666;
+        width:60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="divs" style="background-color:blue">Blauw</div>
+    <div class="divs" style="background-color:green">Groen</div>
+    <div class="divs" style="background-color:red">Rood</div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+            $(document).ready(function() {
+                $('div')
+                .on('click', function(event){
+                    console.log('Event type is : ' + event.type)
+                    console.log('Target is : '  + event.target)
+                    console.log('Target html is : ' + event.target.innerHTML)
+                })
+                .on('mouseenter', function(){
+                    $(this).css('width', '100px');
+                })
+                .on('mouseleave', function(){
+                    $(this).css('width', '80px');
+                })
+            }); 
+    </script>
+
+</body>
+</html>

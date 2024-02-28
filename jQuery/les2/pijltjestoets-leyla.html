@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kader{
+            border: 9px solid red;
+        };
+    </style>
+</head>
+<body>
+    <p>
+        <label for="naam">Naam</label>
+    </p>
+    <p>
+        <input type="text" id="naam" name="naam">
+    </p>
+    <p>
+        <label for="achternaam">Achternaam</label>
+    </p>
+    <p>
+        <input type="text" id="achternaam" name="achternaam">
+    </p>
+
+    <div id="key"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+            $(document).ready(function() {
+                $('input')
+                .on('focus',function(){
+                    $(this).addClass('kader')
+                })
+                .on('blur',function(){
+                    $(this).removeClass('kader')
+                });
+
+
+
+                $(document).on('keyup', function(event){
+                    let keyCode = event.which;
+                    let toetsnaam = ''; 
+
+                switch(keyCode){
+                    case 37:
+                        toetsnaam = 'links';
+                    break;
+                    case 38:
+                        toetsnaam = 'omhoog';
+                    break;
+                    case 39:
+                        toetsnaam = 'rechts';
+                    break;
+                    case 40:
+                        toetsnaam = 'omlaag';
+                    break;
+                    default:
+                    break;
+                }
+                
+                $('#key').append('Key: ' + toetsnaam + '<br>');
+                
+                
+
+                    
+                });
+
+            }); 
+    </script>
+
+</body>
+</html>
