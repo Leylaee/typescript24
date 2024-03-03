@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#menu{
+        width:150px;
+        left:-180px;
+        position: absolute;
+        z-index: 100;
+      }
+      div#menu ul li{
+        margin-bottom: 1px;   
+        position: relative;
+        float : left; 
+      }
+      div#menu ul#unordereList li a{
+          width: 150px;
+          height: 22px;
+          background-color: #00293E;
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+          padding: 7px 10px 0 0;
+          text-align: right;
+          font-weight: bold;
+          cursor: pointer;
+          cursor: hand;
+      }
+ 
+      #inhoud{
+        left:50px;
+        position: absolute;
+        width:500px;
+      }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+
+        <h1>jQuery rocks the menu !</h1>
+        <div id="menu">
+            <ul id="unordereList">
+                <li class="activated"><a href="#">Menu 1</a></li>
+                <li class="disactivated"><a href="#">Menu 2</a></li>
+                <li class="disactivated"><a href="#">Menu 3</a></li>
+                <li class="disactivated"><a href="#">Menu 4</a></li>
+                <li class="disactivated"><a href="#">Menu 5</a></li>
+                <li class="disactivated"><a href="#">Menu 6</a></li>
+            </ul>
+        </div>
+        <div id="inhoud">
+             <div class="inhoud" id="inhoud1">
+                <h2>Inhoud 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia qui in tempore quasi veritatis. Tempore magnam consectetur cum sint eius amet nihil non illo. Dolore ut expedita inventore quam quas?
+                Illo quasi vero corrupti, nulla rem et ratione blanditiis odio in! Laudantium suscipit, ad, accusantium repellat aspernatur, nulla earum enim ab optio eum repudiandae amet corporis incidunt? Nemo, neque a!
+                Mollitia sunt laborum dolore ex sapiente error magni sed perspiciatis amet. Qui nihil cum nisi numquam, non reiciendis at, porro quas animi modi libero sit ex sunt quo omnis distinctio.
+                Reiciendis nisi eligendi optio provident officiis dolor quas quisquam dignissimos est facilis sunt laboriosam ratione aut eveniet commodi, excepturi ipsam similique, itaque illum perspiciatis dolorum unde, ex illo! Ipsum, atque!
+                Provident dicta accusantium aliquid minima voluptatibus necessitatibus libero odio sed? Minima iste molestiae at, repudiandae harum aliquam a quidem tenetur quisquam laudantium, ducimus deleniti nostrum itaque id qui distinctio eius.</p>
+             </div>
+             <div class="inhoud">
+                <h2>Inhoud 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia qui in tempore quasi veritatis. Tempore magnam consectetur cum sint eius amet nihil non illo. Dolore ut expedita inventore quam quas?
+                Illo quasi vero corrupti, nulla rem et ratione blanditiis odio in! Laudantium suscipit, ad, accusantium repellat aspernatur, nulla earum enim ab optio eum repudiandae amet corporis incidunt? Nemo, neque a!
+                Mollitia sunt laborum dolore ex sapiente error magni sed perspiciatis amet. Qui nihil cum nisi numquam, non reiciendis at, porro quas animi modi libero sit ex sunt quo omnis distinctio.
+                Reiciendis nisi eligendi optio provident officiis dolor quas quisquam dignissimos est facilis sunt laboriosam ratione aut eveniet commodi, excepturi ipsam similique, itaque illum perspiciatis dolorum unde, ex illo! Ipsum, atque!
+                Provident dicta accusantium aliquid minima voluptatibus necessitatibus libero odio sed? Minima iste molestiae at, repudiandae harum aliquam a quidem tenetur quisquam laudantium, ducimus deleniti nostrum itaque id qui distinctio eius.</p>
+             </div>
+             <div class="inhoud">
+                <h2>Inhoud 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia qui in tempore quasi veritatis. Tempore magnam consectetur cum sint eius amet nihil non illo. Dolore ut expedita inventore quam quas?
+                Illo quasi vero corrupti, nulla rem et ratione blanditiis odio in! Laudantium suscipit, ad, accusantium repellat aspernatur, nulla earum enim ab optio eum repudiandae amet corporis incidunt? Nemo, neque a!
+                Mollitia sunt laborum dolore ex sapiente error magni sed perspiciatis amet. Qui nihil cum nisi numquam, non reiciendis at, porro quas animi modi libero sit ex sunt quo omnis distinctio.
+             </div>
+             <div class="inhoud">
+                <h2>Inhoud 4</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia qui in tempore quasi veritatis. Tempore magnam consectetur cum sint eius amet nihil non illo. Dolore ut expedita inventore quam quas?
+                Illo quasi vero corrupti, nulla rem et ratione blanditiis odio in! Laudantium suscipit, ad, accusantium repellat aspernatur, nulla earum enim ab optio eum repudiandae amet corporis incidunt? Nemo, neque a!
+                Mollitia sunt laborum dolore ex sapiente error magni sed perspiciatis amet. Qui nihil cum nisi numquam, non reiciendis at, porro quas animi modi libero sit ex sunt quo omnis distinctio.
+                Reiciendis nisi eligendi optio provident officiis dolor quas quisquam dignissimos est facilis sunt laboriosam ratione aut eveniet commodi, excepturi ipsam similique, itaque illum perspiciatis dolorum unde, ex illo! Ipsum, atque!
+                Provident dicta accusantium aliquid minima voluptatibus necessitatibus libero odio sed? Minima iste molestiae at, repudiandae harum aliquam a quidem tenetur quisquam laudantium, ducimus deleniti nostrum itaque id qui distinctio eius.</p>
+             </div>
+             <div class="inhoud">
+                <h2>Inhoud 5</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia qui in tempore quasi veritatis. Tempore magnam consectetur cum sint eius amet nihil non illo. Dolore ut expedita inventore quam quas?
+                Illo quasi vero corrupti, nulla rem et ratione blanditiis odio in! Laudantium suscipit, ad, accusantium repellat aspernatur, nulla earum enim ab optio eum repudiandae amet corporis incidunt? Nemo, neque a!
+                Mollitia sunt laborum dolore ex sapiente error magni sed perspiciatis amet. Qui nihil cum nisi numquam, non reiciendis at, porro quas animi modi libero sit ex sunt quo omnis distinctio.
+                Reiciendis nisi eligendi optio provident officiis dolor quas quisquam dignissimos est facilis sunt laboriosam ratione aut eveniet commodi, excepturi ipsam similique, itaque illum perspiciatis dolorum unde, ex illo! Ipsum, atque!
+                Provident dicta accusantium aliquid minima voluptatibus necessitatibus libero odio sed? Minima iste molestiae at, repudiandae harum aliquam a quidem tenetur quisquam laudantium, ducimus deleniti nostrum itaque id qui distinctio eius.</p>
+             </div>
+             <div class="inhoud">
+                <h2>Inhoud 6</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia qui in tempore quasi veritatis. Tempore magnam consectetur cum sint eius amet nihil non illo. Dolore ut expedita inventore quam quas?
+               Qui nihil cum nisi numquam, non reiciendis at, porro quas animi modi libero sit ex sunt quo omnis distinctio.
+                Reiciendis nisi eligendi optio provident officiis dolor quas quisquam dignissimos est facilis sunt laboriosam ratione aut eveniet commodi, excepturi ipsam similique, itaque illum perspiciatis dolorum unde, ex illo! Ipsum, atque!
+                Provident dicta accusantium aliquid minima voluptatibus necessitatibus libero odio sed? Minima iste molestiae at, repudiandae harum aliquam a quidem tenetur quisquam laudantium, ducimus deleniti nostrum itaque id qui distinctio eius.</p>
+             </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+            $(document).ready(function() {
+            let $menu = $('#menu ul#unordereList li' );
+
+            
+               
+	      
+            $('#container').hide();
+            $(' .inhoud').css('display' ,'none');
+            $('#inhoud1').show();
+            $menu.first().addClass('activated').children('a').css('color', 'red');
+
+            $('#container').fadeIn();
+            
+               $menu.hover(
+                function(){
+                    $(this).animate( {left: '120px'} , 'fast');
+                    $(this).children('a').css('background-color', 'lightgreen'); 
+                },
+                function(){
+                    $(this).animate({left: '0px'}, 'fast');
+                    $(this).children('a').css('background-color', ' #00293E');
+                }
+               );
+
+               $menu.on('click', function(){
+                if (!$(this).hasClass('activated')) {
+                    $menu.removeClass('activated').addClass('disactivated');
+                    $(this).removeClass('disactivated').addClass('activated');
+                    $(this).children('a').css('color', 'red');
+                    $(this).siblings().removeClass('activated').children('a').css('color', 'white');
+
+                    }
+                let index = $(this).index();
+                 $('#inhoud .inhoud').hide().eq(index).slideDown();
+                
+                });
+
+
+
+            }); 
+    </script>
+
+</body>
+</html>
