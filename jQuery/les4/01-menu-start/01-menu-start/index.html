@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu with jQuery</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+</head>
+
+<body>
+    <div class="container">
+        <ul id="menu">
+            <li>
+                <a href="#">
+                    <i class="icon_about"></i>
+                    <span class="title">About</span>
+                    <span class="description">Learn about us and our services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon_work"></i>
+                    <span class="title">Work</span>
+                    <span class="description">See our work and portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon_help"></i>
+                    <span class="title">Help</span>
+                    <span class="description">Talk to our support</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon_search"></i>
+                    <span class="title">Search</span>
+                    <span class="description">Search our website</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('li').hover(
+        function(){
+           let animateA = { bottom: '0%'};
+           let animateI = { top: '-5%'};
+
+           animeer($(this).children('a'), animateA, 300);
+           animeer($(this).children('a').children('i'), animateI, 300);
+
+        },
+        function(){
+            let animateA = { bottom: '-95px'};
+            let animateI = { top: '30%'};
+
+           animeer($(this).children('a'), animateA, 300);
+           animeer($(this).children('a').children('i'), animateI, 300);
+        }
+      );
+      function animeer(selectie, propertyWaarde, speed){
+            selectie.stop().animate(propertyWaarde, speed);
+      }
+    });
+    
+    </script>
+</body>
+
+</html>
