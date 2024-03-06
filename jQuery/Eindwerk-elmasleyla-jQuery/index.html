@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip{
+            margin: 10px;
+            padding: 8px;
+            border: 1px solid  #008B8B;
+            background-color: #008B8B;
+            color: white;
+            z-index: 2;
+            position: absolute;
+           
+        }
+
+        button{
+            padding: 8px;
+            border: 1px solid  #008B8B;
+            background-color: #008B8B;
+            color: white;
+        }
+        .foutmelding{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Wat is jouw sterrenbeeld?</h1>
+
+    <p>Geef de dag en maand van jouw geboortedatum in.</p>
+
+    <form>
+        <p class="dag">
+            <label for="dag">Geboortedag:</label>
+            <input type="text" id="dag" placeholder="Voer in">
+            <span class="foutmelding"></span>
+
+        </p>
+        <p class="maand">
+            <label for="maand">Geboortemaand:</label>
+            <input type="text" id="maand" placeholder="Voer in">
+            <span class="foutmelding"></span>
+            
+
+        </p>
+        <button id="ontdek">Ontdek je sterrenbeeld</button>
+
+        <div id="resultaat">
+
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+            $(document).ready(function() {
+                let dagok = false;
+                let maandok = false;
+                let $input = $('input[type="text"]');
+                let $inputDag = $('input#dag');
+                let $inputMaand = $('input#maand');
+                let $foutmelding = $('.foutmelding');
+
+
+                
+                $inputDag
+                .on('focus', function showTooltip(){
+                    $(this).removeAttr('placeholder');
+                    $('<div class="tooltip">Geef je geboortedag in.</div>').appendTo('p.dag');
+                    $('.tooltip').css(
+                        {
+                            'top' : '8%',
+                            'right': '60%'
+                        }
+                    )
+                })
+                .on('blur', function(){
+                    dagok =  controleerInput($(this),31)
+            
+                })
+                $inputMaand
+                .on('focus', function showTooltip(){
+                    $(this).removeAttr('placeholder');
+                    $('<div class="tooltip">Geef je geboortemaand in.</div>').appendTo('p.maand');
+                    $('.tooltip').css(
+                        {
+                            'top' : '10%',
+                            'right': '60%'
+                        }
+                    )
+                })
+                .on('blur', function(){
+                    maandok = controleerInput($(this),12)
+                
+                })
+
+                $('#ontdek').click(function(){
+                    event.preventDefault();
+
+                    if(dagok && maandok){
+                        let dag = parseInt($inputDag.val());
+                        let maand = parseInt($inputMaand.val());
+                        let sterrenbeeld = '';
+                        if((maand === 1 && dag >=1 && dag <=19) || (maand === 12 && dag >=21 && dag <=31)){
+                            sterrenbeeld = 'Steenbok';
+                        }else if ((maand === 1 && dag >=20 && dag <=31) || (maand === 2 && dag >=1 && dag <=18)){
+                            sterrenbeeld = 'Waterman';
+                        }else if ((maand === 2 && dag >=19 && dag <=28) || (maand === 3 && dag >=1 && dag <=20)){
+                            sterrenbeeld = 'Vissen';
+                        }else if ((maand === 3 && dag >=21 && dag <=31) || (maand === 4 && dag >=1 && dag <=20)){
+                            sterrenbeeld = 'Ram';
+                        }else if ((maand === 4 && dag >=21 && dag <=31) || (maand === 5 && dag >=1 && dag <=21)){
+                            sterrenbeeld = 'Stier';
+                        }else if ((maand === 5 && dag >=22 && dag <=31) || (maand === 6 && dag >=1 && dag <=21)){
+                            sterrenbeeld = 'Tweeling';
+                        }else if ((maand === 6 && dag >=22 && dag <=31) || (maand === 7 && dag >=1 && dag <=22)){
+                            sterrenbeeld = 'Kreeft';
+                        }else if ((maand === 7 && dag >=23 && dag <=31) || (maand === 8 && dag >=1 && dag <=22)){
+                            sterrenbeeld = 'Leeuw';
+                        }else if ((maand === 8 && dag >=23 && dag <=31) || (maand === 9 && dag >=1 && dag <=22)){
+                            sterrenbeeld = 'Maagd';
+                        }else if ((maand === 9 && dag >=23 && dag <=30) || (maand === 10 && dag >=1 && dag <=22)){
+                            sterrenbeeld = 'Weegschaal';
+                        }else if ((maand === 10 && dag >=23 && dag <=31) || (maand === 11 && dag >=1 && dag <=22)){
+                            sterrenbeeld = 'Schorpioen';
+                        }else if ((maand === 11 && dag >=23 && dag <=30) || (maand === 12 && dag >=1 && dag <=20)){
+                            sterrenbeeld = 'Boogschutter';
+                        }
+
+                        $('#resultaat').text('Je sterrenbeeld is: ' + sterrenbeeld);
+                        $('<div>').attr('id', 'image').appendTo('#resultaat');
+                        let imageSrc = 'img/' +sterrenbeeld.toLowerCase() + '.jpg';
+                        
+                        $('<img>').attr('src', imageSrc).appendTo('#image');
+                    }
+                });
+    
+
+
+                function controleerInput(input,maxWaarde){
+                    let waarde = parseInt(input.val());
+                    if(input.val() === '' || isNaN(waarde) || waarde <= 0 || waarde > maxWaarde){
+                        $foutmelding.text('Ongeldige input!');
+                        return false; 
+                    } else {
+                        $foutmelding.text('');
+                        return true;
+                        
+                    }
+
+                }
+            }); 
+    </script>
+
+</body>
+</html>
