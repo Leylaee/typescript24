@@ -43,3 +43,4 @@ console.log(huidigerichting);
 console.log(currentSeason);
 console.log(favPlanet);
 console.log(mijnData);
+//# sourceMappingURL=index.js.map
