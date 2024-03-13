@@ -8,6 +8,17 @@ class Auto {
     toonDetails() {
         console.log(`${this.merk} ${this.model} (Bouwjaar: ${this.bouwjaar})`);
     }
+    get beschrijving() {
+        return `${this.merk} ${this.model}`;
+    }
+    set jaar(value) {
+        if (value > 2000) {
+            this.bouwjaar = value;
+        }
+        else {
+            console.log("Geef een geldig jaar in.");
+        }
+    }
 }
 const mijnAuto = new Auto("Toyota", "Corolla", 2020);
 const jouwAuto = new Auto("honda", "Civic", 2019);
