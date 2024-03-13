@@ -30,12 +30,10 @@ class Users{
     }
 
     setName(nieuwNaam: string):void {
-        this.naam = nieuwNaam;
         this.logger.logging(`De gebruikersnaam is veranderd van ${this.naam} naar ${nieuwNaam}.`);
     }
 
 }
-
 
 const users1 = new Users("John Doe");
 users1.setName("Jane Doe");

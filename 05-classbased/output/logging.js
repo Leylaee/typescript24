@@ -20,7 +20,8 @@ class Users {
         this.logger.logging(`Een nieuwe gebruiker met de naam ${naam} is aangemaakt.`);
     }
     setName(nieuwNaam) {
-        this.naam = nieuwNaam;
         this.logger.logging(`De gebruikersnaam is veranderd van ${this.naam} naar ${nieuwNaam}.`);
     }
 }
+const users1 = new Users("John Doe");
+users1.setName("Jane Doe");
