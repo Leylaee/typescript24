@@ -35,3 +35,7 @@ const book : BookList = [
         ISBN : "978-0-452-28423-4"
     }
 ];
+
+console.log(findBookByAuthor(book, "J.D Salinger"));
+const boek2 = findBookByAuthor(book, "George Orwell");
+console.log(boek2);
